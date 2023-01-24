@@ -11,3 +11,267 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+/* ------------------------------------------------Navbar Css----------------------------------------- */
+
+.Navbar{
+  width: 100vw;
+  height: 5vw;
+  background-color: rgb(23, 87, 93);
+  
+}
+
+.Navbar-Option{
+  padding-top: 10px;
+  /* box-shadow: 0px 0px 5px 2px grey; */
+}
+
+.nav-img{
+  margin-left: 20px;
+  width: 35px;
+  height: 35px;
+  top: 10px;
+}
+
+.nav-opt{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 35px ;
+  /* margin-right: 15px; */
+ 
+}
+
+.nav-opt:hover{
+  opacity: 0.8;
+}
+
+
+/* ------------------------------------------------ Navbar Css ----------------------------------------- */
+
+.Navbar{
+  width: 100vw;
+  height: 5vw;
+  background-color: rgb(244, 113, 113);
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  
+}
+
+.Navbar-Option{
+  padding-top: 10px;
+  /* box-shadow: 0px 0px 5px 2px grey; */
+}
+
+.nav-img{
+  margin-left: 30px;
+  width: 35px;
+  height: 35px;
+  top: 10px;
+}
+
+.heading{
+  color: white;
+  font-size: 35px;
+  /* font-style: italic; */
+  font-family:Arial, Helvetica, sans-serif;
+  margin-left: 15px;
+}
+
+.cart-img{
+  width: 35px;
+  height: 30px;
+  margin-top: 15px;
+}
+.cart-img:hover{
+  width: 38px;
+  height: 32px;
+  margin-top: 15px;
+}
+
+
+.nav-opt{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 35px ;
+  /* margin-right: 15px; */
+ 
+}
+
+.nav-opt:hover{
+  opacity: 0.8;
+}
+
+.user-profile-nav{
+  /* display: flex; */
+  /* justify-content: right;     */  
+  margin-right: 40px;
+}
+
+.user-name{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 35px ;
+  
+}
+.user-img{
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+  margin-top: 18px;
+}
+
+.user-img:hover{
+  box-shadow: 0px 0px 4px 2px rgb(255, 255, 255);
+  border-radius: 50%;
+}
+
+.count{
+  color: white;
+  background-color: aquamarine;
+  border-radius: 50%;
+  padding: 2px 4px;
+  padding-left: 7px;
+  margin-left: -20px;
+}
+
+
+
+
+/* //////////////////////////////////////////// Home Css ///////////////////////////////////// */
+
+.item-div{
+  width: 100vw;
+  height: 28vh;
+  padding: 5px;
+  display: flex;
+  overflow-y: scroll;
+}
+
+.item-div:nth-child(even){
+  background-color: beige;
+}
+
+.item-title{
+  font-size: 18px;
+  font-weight: 500;
+  padding: 20px 0px;
+}
+
+.item-image img{
+  width: 13vw;
+  height: 18vh;
+  margin: 30px 30px;
+  /* justify-items: right; */
+  /* border: 1px solid rgb(194, 191, 191); */
+}
+
+.item-rate{
+  color: rgb(115, 14, 14);
+  font-weight: 500;
+}
+.item-rate img{
+  width: 15px;
+  height: 15px;
+}
+
+
+.item-price{
+  color: green;
+  font-weight: 500;
+}
+
+.item-desc{
+  overflow-y: scroll;
+}
+
+.add-to-cart-btn{
+  width: 6rem;
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 15px;
+  border-radius: 2px;
+  border-width: 1px;
+  background-color: rgb(4, 142, 4);
+  color: rgb(245, 244, 244);
+}
+
+.add-to-cart-btn:hover{
+  box-shadow: 0px 0px 2px 1px rgb(59, 148, 15);
+}
+.counter{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+
+
+
+/* ////////////////////////////////////////////////// Cart Css ///////////////////////////////////////////////////// */
+
+
+.cart-item-div{
+  width: 100vw;
+  height: 25vh;
+  padding: 2px;
+  display: flex;
+  /* overflow-y: scroll; */
+}
+
+.cart-item-div:nth-child(even){
+  background-color: rgb(247, 231, 250);
+}
+.cart-item-div:nth-child(odd){
+  background-color: rgb(226, 255, 248);
+}
+
+.add-button{
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 15px;
+}
+.add-button:hover{
+  box-shadow: 0px 0px 2px 1px rgb(59, 148, 15);
+  border-radius: 55%;
+}
+
+
+.minus-button{
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+}
+.minus-button:hover{
+  box-shadow: 0px 0px 2px 1px rgb(52, 51, 51);
+  border-radius: 55%;
+}
+
+.del-button{
+  width: 30px;
+  height: 30px;
+  margin-left: 25px;
+}
+.del-button:hover{
+  box-shadow: 0px 0px 2px 1px rgb(52, 51, 51);
+  border-radius: 55%;
+}
+
+.cart-sum-div{
+  padding: 30px;
+}
+.cart-sum{
+  font-size: 20px;
+  color: rgb(169, 13, 13);
+  font-weight: 500;
+}
+.sum{
+  color: rgb(51, 168, 16);
+  font-size: 19px;
+}
