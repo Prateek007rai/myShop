@@ -1,11 +1,9 @@
-import { useState ,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 
 const Navbar = (props) => {
 
-    const {cart } = props ;  
-    let [count ,setCount] = useState(0);  
+    const {cart } = props ;   
 
      // cart qty count
      const getCartCount = () =>{      
