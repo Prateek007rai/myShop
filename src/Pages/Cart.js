@@ -76,7 +76,7 @@ function Cart(props) {
         ))}
 
         <div className="cart-sum-div">
-            <span className="cart-sum">Total :</span> <span className="sum"> {getCartTotal()} Rs.</span>
+            <span className="cart-sum">Total :</span> <span className="sum"> <img src='https://cdn-icons-png.flaticon.com/128/3998/3998647.png' className='rupee-sign' alt='rupee' /> {getCartTotal()} </span>
         </div>
      </div>
     )

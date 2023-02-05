@@ -213,7 +213,7 @@ code {
 
 
 
-/* ////////////////////////////////////////////////// Cart Css ///////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// Cart & Cartitem Css ///////////////////////////////////////////////////// */
 
 
 .cart-item-div{
@@ -267,11 +267,19 @@ code {
   padding: 30px;
 }
 .cart-sum{
-  font-size: 20px;
+  font-size: 22px;
   color: rgb(169, 13, 13);
   font-weight: 500;
 }
 .sum{
-  color: rgb(51, 168, 16);
-  font-size: 19px;
+  color: rgb(24, 177, 204);
+  font-size: 21px;
+  font-weight: 500;
+}
+
+
+.rupee-sign{
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
 }
