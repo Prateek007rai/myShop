@@ -1,78 +1,82 @@
+import CartItem from './CartItem';
 
+function Cart(props) {
 
-
-const Cart = (props) => {
-
-    const {cart , setCart} = props ;
+    const { cart, setCart } = props ;
+    
 
     // increase the qty
-    const increaseQty = (id) => {
-         cart.forEach(element => {
-            if(element.id === id){
-                element.qty += 1 ;
-                console.log('Inc qty' , element.qty)
-            }
-         });
+    const onIncreaseQty = (item) => {
 
-         setCart(cart);
-    }
+        const index = cart.indexOf(item);
+        console.log('index from cart.js: ' , index);
+        cart[index].qty += 1 ;
+        // qtyOfItem(item);
+        // getCartTotal();
+        const arr = cart.filter((item) => item.id !== -20 );
+        setCart(arr);
+        console.log('index from cart.js: ' , cart);
 
-    // decrease the qty
-    const decreaseQty = (id) => {
-        cart.forEach(element => {
-            if(element.id === id && element.qty > 1){
-                element.qty -= 1 ;
-                console.log('dec qty' , element.qty)
-        }});
-
-        setCart(cart);
     }
 
 
-    // delete the data from cart
-    const deleteFromCart = (id) => {
-        const arr = cart.filter((item) => item.id !== id);
+    // Decrease the qty
+    const onDecreaseQty = (item) => {
+
+        const index = cart.indexOf(item);
+        console.log('index from cart.js: ' , index);
+        if(cart[index].qty > 1){
+        cart[index].qty -= 1 ;
+        }
+        // qtyOfItem(item);
+        // getCartTotal();
+        const arr = cart.filter((item) => item.id !== -20 );
+        setCart(arr);
+        console.log('index from cart.js: ' , cart);
+    }
+        
+    //count the qty
+    const qtyOfItem = (item) => {
+         console.log('------->' , item.qty);
+         return item.qty;
+    }
+
+    // deletion
+    const onDeleteProduct =(id) => {
+        const arr  = cart.filter((item) => item.id !== id ) ;
         setCart(arr);
     }
 
-    // total sum
-    const getTotalSum = () =>{
-        var a = 0;
-        cart.forEach((item) => a += item.qty*item.price);
-        return a ;
+    
+   // total price
+   const getCartTotal = () =>{
+  
+    let Total = 0;
+  
+    // loop each product
+    cart.forEach((product) => {
+      Total += product.price*product.qty;
+    })
+    // BTW no need to returnthe total ,  bcz props.total will fetch it automatically
+    return Total;
     }
 
-
+   
     return (
      <div className="Cart">
         {cart.map((item) => (
-            <div className='cart-item-div'>
-                {/* used some css of home */}
-                <div className='div-image'>
-                   <span className='item-image'><img src={item.image} alt='item-img' /></span>
-                </div> 
-                <div>
-                   <span className='item-title'>{item.title}</span>  
-                   <p className='item-price'>Rs : {item.price}</p> 
-       
-                   <p className='item-rate'>Rating - {item.rating.rate} <img src='https://cdn-icons-png.flaticon.com/128/477/477406.png' alt='star-img' /></p> 
-
-                   {/* add the count */}
-                   <img src="https://cdn-icons-png.flaticon.com/128/4315/4315609.png" alt="add-btn" className="add-button" onClick= {() => increaseQty(item.id)} />
-
-                   <span className="counter">{item.qty}</span>
-                   {/* minus button */}
-                   <img src="https://cdn-icons-png.flaticon.com/512/4436/4436695.png" alt="minus-btn" className="minus-button" onClick={() =>decreaseQty(item.id)} />
-
-
-                   {/* DELETE button */}
-                   <img src="https://cdn-icons-png.flaticon.com/128/6711/6711573.png" alt="del-btn" className="del-button" onClick={()=> deleteFromCart(item.id)} />
-                </div>
-            </div>    
+            <CartItem 
+            item={item} 
+            onIncreaseQty = {onIncreaseQty}
+            onDecreaseQty = {onDecreaseQty}
+            onDeleteProduct = {onDeleteProduct} 
+            qtyOfItem={qtyOfItem}
+            />  
+              
         ))}
 
         <div className="cart-sum-div">
-            <span className="cart-sum">Total Rs :</span> <span className="sum"> {getTotalSum()}</span>
+            <span className="cart-sum">Total :</span> <span className="sum"> {getCartTotal()} Rs.</span>
         </div>
      </div>
     )

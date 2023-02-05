@@ -1,17 +1,23 @@
+import { useState ,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 
 const Navbar = (props) => {
 
-    const {cart } = props ;    
+    const {cart } = props ;  
+    let [count ,setCount] = useState(0);  
 
      // cart qty count
-    const totalCount = () => {
-    var total = 0 ; 
-    cart.forEach((item) => total += item.qty);
-    console.log('....from navbar.js..' , total);
-    return total;
-    }
+     const getCartCount = () =>{      
+        let counting = 0;
+      
+      // loop each product
+        cart.forEach((product) => {
+          counting += product.qty;
+        });
+      
+        return counting;
+      }
     
 
     return (
@@ -24,7 +30,7 @@ const Navbar = (props) => {
             <div className='user-profile-nav'>
                 {/* cart image */}
                 <Link to="/cart" className='nav-opt'> <img src='https://cdn-icons-png.flaticon.com/128/9385/9385275.png' className='cart-img' alt='cart-img' /> </Link>
-                <span className='count'> {totalCount()} </span>
+                <span className='count'> {getCartCount()} </span>
 
 
                 {/* profile info */}

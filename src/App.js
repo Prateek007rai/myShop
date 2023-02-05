@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import Home from './Pages/Home';
 import Cart from './Pages/Cart';
 
-function App() {
+const App = () => {
 
   const [data , setData] = useState([]);
   const [cart , setCart] = useState([]);
@@ -17,12 +17,14 @@ function App() {
      fetch(url)
      .then(response => response.json())
      .then(data => {                               //this 'data' is the array of all fetched albums id and title .
+        data.forEach((product) => product.qty = 0);            //here in each product qty is initially added as '0'.
+        // console.log(data);
         setData(data);
      });
   }, []);
 
-  // added item in cart
 
+  // added item in cart
   const dataAddedInCart = (id) => {
     const varr = fetch(`https://fakestoreapi.com/products/${id}`)
     .then(response => response.json())
@@ -34,11 +36,12 @@ function App() {
       console.log('var value' , value);
       value.qty = 1;
       cart.push(value);                                  //here varr is promise so we refined it and used it in cart from app.js directly and passing it as props
+      setCart(cart);   
     });
-
-    
-    console.log('============', cart);
+    console.log('========from app.js====', cart);
   }
+
+
 
 
   return (
@@ -47,7 +50,12 @@ function App() {
           <Navbar cart={cart} />
           <Routes>
             <Route path='/' element={<Home data={data} setData={setData} cart={cart} dataAddedInCart={dataAddedInCart} />} />
-            <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
+            <Route path='/cart' element={
+              <Cart 
+              cart={cart} 
+              setCart={setCart} 
+              />}
+            />
           </Routes>
         </BrowserRouter>
     </div>
