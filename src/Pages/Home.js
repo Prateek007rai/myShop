@@ -19,10 +19,10 @@ const Home = (props) => {
                Sort by
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-               <a class="dropdown-item" onClick={() => props.sortByIncPrice()}>Low Price First</a>
-               <a class="dropdown-item" onClick={() => props.sortByDecPrice()}>High Price First</a>
-               <a class="dropdown-item" onClick={() => props.sortByLowRating()}>Low Rating</a>
-               <a class="dropdown-item" onClick={() => props.sortByHighRating()}>High Rating</a>
+               <a class="dropdown-item" href="#top" onClick={() => props.sortByIncPrice()}>Low Price First</a>
+               <a class="dropdown-item" href="#top" onClick={() => props.sortByDecPrice()}>High Price First</a>
+               <a class="dropdown-item" href="#top" onClick={() => props.sortByLowRating()}>Low Rating</a>
+               <a class="dropdown-item" href="#top" onClick={() => props.sortByHighRating()}>High Rating</a>
                
             </div>
       </div>
