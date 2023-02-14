@@ -42,6 +42,47 @@ const App = () => {
   }
 
 
+  //sorting the array by inc price
+  const sortByIncPrice = () =>{
+    data.sort(function(a, b) {
+       return parseFloat(a.price) - parseFloat(b.price);
+   });
+   const arr = data.filter((item) => item.id !== -20 );
+   console.log('sorted increasing array' , arr)
+   setData(arr);
+ }
+
+
+  //sorting the array by inc price
+ const sortByDecPrice = () =>{
+    data.sort(function(a, b) {
+       return parseFloat(b.price) - parseFloat(a.price);
+   });
+   const arr = data.filter((item) => item.id !== -20 );
+   console.log('sorted decreasing array' , arr)
+   setData(arr);
+ }
+
+   //sorting the array by Low rating
+  const sortByLowRating = () =>{
+    data.sort(function(a, b) {
+       return parseFloat(a.rating.rate) - parseFloat(b.rating.rate);
+   });
+   const arr = data.filter((item) => item.id !== -20 );
+   console.log('sorted by low rating array' , arr)
+   setData(arr);
+  }
+
+     //sorting the array by Low rating
+    const sortByHighRating = () =>{
+      data.sort(function(a, b) {
+         return parseFloat(b.rating.rate) - parseFloat(a.rating.rate);
+     });
+     const arr = data.filter((item) => item.id !== -20 );
+     console.log('sorted by high rating array' , arr)
+     setData(arr);
+    }  
+
 
 
   return (
@@ -49,7 +90,16 @@ const App = () => {
         <BrowserRouter>
           <Navbar cart={cart} />
           <Routes>
-            <Route path='/' element={<Home data={data} setData={setData} cart={cart} dataAddedInCart={dataAddedInCart} />} />
+
+            <Route path='/' element={<Home data={data} setData={setData}
+             cart={cart} dataAddedInCart={dataAddedInCart}
+             sortByDecPrice={sortByDecPrice} 
+             sortByIncPrice= {sortByIncPrice}
+             sortByLowRating= {sortByLowRating} 
+             sortByHighRating= {sortByHighRating}
+             />} 
+            />
+
             <Route path='/cart' element={
               <Cart 
               cart={cart} 

@@ -6,7 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+body::-webkit-scrollbar {
+  display: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -145,6 +147,18 @@ code {
 
 /* //////////////////////////////////////////// Home Css ///////////////////////////////////// */
 
+.dropdown button{
+  background: rgb(254, 219, 147);
+  color: rgb(64, 63, 63);
+  margin: 10px;
+  margin-left: 92vw;
+  /* margin-top: 70vh; */
+  padding: 3px 5px 3px 5px;
+  /* position: fixed; */
+}
+.home::-webkit-scrollbar {
+  display: none;
+}
 .item-div{
   width: 100vw;
   height: 28vh;
@@ -152,8 +166,10 @@ code {
   display: flex;
   overflow-y: scroll;
 }
-
-.item-div:nth-child(even){
+.item-div::-webkit-scrollbar {
+  display: none;
+}
+.item-div:nth-child(odd){
   background-color: beige;
 }
 
@@ -188,6 +204,9 @@ code {
 
 .item-desc{
   overflow-y: scroll;
+}
+.item-desc::-webkit-scrollbar {
+  display: none;
 }
 
 .add-to-cart-btn{

@@ -3,6 +3,7 @@ const Home = (props) => {
 
    const {data} = props;
 
+
 // // //////////// Delete the data ///////////////
 //    const deleteData = (id) => {
 //       const arr = data.filter((item) => item.id !== id);
@@ -11,6 +12,22 @@ const Home = (props) => {
 
    return (
     <div className="home">
+
+      {/* sort item dropdown button  using bootstrap*/}
+      <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Sort by
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+               <a class="dropdown-item" onClick={() => props.sortByIncPrice()}>Low Price First</a>
+               <a class="dropdown-item" onClick={() => props.sortByDecPrice()}>High Price First</a>
+               <a class="dropdown-item" onClick={() => props.sortByLowRating()}>Low Rating</a>
+               <a class="dropdown-item" onClick={() => props.sortByHighRating()}>High Rating</a>
+               
+            </div>
+      </div>
+
+
     {data.map((item) => (
       <div className='item-div'>
          <div className='div-image'>
